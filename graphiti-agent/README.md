@@ -1,6 +1,6 @@
 # Qwen3大模型AI Agent智能体模仿「人类记忆力」的秘密武器——开源动态知识图谱Graphiti
 
-本项目将介绍基于开源动态知识图谱Graphiti，打造一位拥有“模仿人类记忆力”的 AI Agent智能体。
+本项目将介绍基于开源动态知识图谱Graphiti，打造一套拥有“人类记忆力”的 AI Agent智能体。
 
 ![Graphiti动态知识图谱](https://mz-blog-res.oss-cn-beijing.aliyuncs.com/img/b007/knowl_graph_2-gh.gif)
 

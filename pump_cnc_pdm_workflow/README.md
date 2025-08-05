@@ -1,11 +1,28 @@
-- 工作流的YAML源码
+# 工作流的YAML源码
 - dify-workflow.yml
-- MCP服务端源码
+# MCP服务端源码
+- dify-python-mcp-server
+# 工作流Code节点代码
+- Code-ANALYZE-IOT-DATA.py
+- Code-EXTRACT-PART-ID.py
+- Code-PARSE-RMMS-DATA.py
+# 业务系统的数据接口封装源码（工业物联网管理平台IoT Platform/MES/远程运维系统RMMS的HTTP接口源码)
 - integration
-- 工作流Code节点代码
-- 业务系统的数据接口封装源码（工业物联网管理平台IoT Platform/MES/远程运维系统RMMS的HTTP接口源码)
-- 数据库DDL文件
-- 工作流的提示词
-- 工作流的MCP客户端节点配置
-- 工作流的HTTP节点配置
-- 工作流的RAGFlow节点配置
+# 数据库DDL文件
+- tabCNCData.sql
+- tabMESProductionData.sql
+- tabRMMSFailureCases.sql
+- tabRMMSMaintenanceHistory.sql
+- tabRMMSSpareParts.sql
+# 工作流的提示词
+- 提示词-LLM-FAULT_PREDICTION.md
+- 提示词-LLM-GENERATE_MAINTENANCE_SUGGESTIONS.md
+# 工作流的MCP客户端节点配置
+- MCP客户端-GET_CNC_DATA_SNAPSHOT.png
+# 工作流的HTTP节点配置
+- HTTP请求-GET_Failure_Cases.png
+- HTTP请求-GET_Maintenance_History.png
+- HTTP请求-GET_SPARE_PART_INFO.png
+- HTTP请求-GET_MES_Production.png
+# 工作流的RAGFlow节点配置
+- 知识库RAGKB设置.png

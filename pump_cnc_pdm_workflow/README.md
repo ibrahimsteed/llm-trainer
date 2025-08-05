@@ -1,6 +1,7 @@
 - 工作流的YAML源码
 - dify-workflow.yml
 - MCP服务端源码
+- integration
 - 工作流Code节点代码
 - 业务系统的数据接口封装源码（工业物联网管理平台IoT Platform/MES/远程运维系统RMMS的HTTP接口源码)
 - 数据库DDL文件

@@ -1,0 +1,81 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "format:fc-{####}",
+ "creation": "2025-07-25 09:44:47.247511",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "caseid",
+  "equipmentmodel",
+  "symptom",
+  "failuremode",
+  "rootcause",
+  "correctiveaction",
+  "requiredparts"
+ ],
+ "fields": [
+  {
+   "fieldname": "caseid",
+   "fieldtype": "Data",
+   "label": "\u6848\u4f8b\u53f7"
+  },
+  {
+   "fieldname": "equipmentmodel",
+   "fieldtype": "Data",
+   "label": "\u8bbe\u5907\u578b\u53f7"
+  },
+  {
+   "fieldname": "symptom",
+   "fieldtype": "Data",
+   "label": "\u75c7\u72b6"
+  },
+  {
+   "fieldname": "failuremode",
+   "fieldtype": "Data",
+   "label": "\u6545\u969c\u6a21\u5f0f"
+  },
+  {
+   "fieldname": "rootcause",
+   "fieldtype": "Data",
+   "label": "\u6839\u539f\u56e0"
+  },
+  {
+   "fieldname": "correctiveaction",
+   "fieldtype": "Data",
+   "label": "\u7ef4\u4fee\u63aa\u65bd"
+  },
+  {
+   "fieldname": "requiredparts",
+   "fieldtype": "Data",
+   "label": "\u6240\u9700\u90e8\u4ef6"
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2025-07-25 09:48:22.845189",
+ "modified_by": "Administrator",
+ "module": "IoT Management",
+ "name": "RMMSFailureCases",
+ "naming_rule": "Expression",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

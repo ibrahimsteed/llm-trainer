@@ -1,0 +1,148 @@
+{
+ "actions": [],
+ "allow_import": 1,
+ "allow_rename": 1,
+ "autoname": "format:cnc-{equipmentid}-{####}",
+ "creation": "2025-07-18 18:19:01.392709",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "equipmentid",
+  "workpiececount",
+  "runtime",
+  "cuttingtime",
+  "cncmodel",
+  "currenttoolno",
+  "operationmode",
+  "runmode",
+  "rapidoverride",
+  "break_column",
+  "spindleactualrpm",
+  "feedactualrate",
+  "spindleload",
+  "xaxisload",
+  "yaxisload",
+  "zaxisload",
+  "alarmcode",
+  "alarmmessage"
+ ],
+ "fields": [
+  {
+   "fieldname": "equipmentid",
+   "fieldtype": "Data",
+   "label": "\u8bbe\u5907\u7f16\u53f7"
+  },
+  {
+   "fieldname": "workpiececount",
+   "fieldtype": "Int",
+   "label": "\u52a0\u5de5\u96f6\u4ef6\u6570"
+  },
+  {
+   "fieldname": "runtime",
+   "fieldtype": "Data",
+   "label": "\u8fd0\u884c\u65f6\u95f4"
+  },
+  {
+   "fieldname": "cuttingtime",
+   "fieldtype": "Data",
+   "label": "\u5207\u524a\u65f6\u95f4"
+  },
+  {
+   "fieldname": "cncmodel",
+   "fieldtype": "Data",
+   "label": "CNC \u578b\u53f7"
+  },
+  {
+   "fieldname": "currenttoolno",
+   "fieldtype": "Data",
+   "label": "\u5f53\u524d\u5200\u5177\u53f7"
+  },
+  {
+   "fieldname": "operationmode",
+   "fieldtype": "Data",
+   "label": "\u64cd\u4f5c\u6a21\u5f0f"
+  },
+  {
+   "fieldname": "runmode",
+   "fieldtype": "Data",
+   "label": "\u8fd0\u884c\u6a21\u5f0f"
+  },
+  {
+   "fieldname": "rapidoverride",
+   "fieldtype": "Data",
+   "label": "\u5feb\u901f\u79fb\u52a8\u500d\u7387"
+  },
+  {
+   "fieldname": "spindleactualrpm",
+   "fieldtype": "Data",
+   "label": "\u4e3b\u8f74\u8f6c\u901f"
+  },
+  {
+   "fieldname": "feedactualrate",
+   "fieldtype": "Data",
+   "label": "\u8fdb\u7ed9\u901f\u5ea6"
+  },
+  {
+   "fieldname": "spindleload",
+   "fieldtype": "Data",
+   "label": "\u4e3b\u8f74\u8d1f\u8f7d"
+  },
+  {
+   "fieldname": "xaxisload",
+   "fieldtype": "Data",
+   "label": "X\u8f74\u8d1f\u8f7d"
+  },
+  {
+   "fieldname": "yaxisload",
+   "fieldtype": "Data",
+   "label": "Y\u8f74\u8d1f\u8f7d"
+  },
+  {
+   "fieldname": "zaxisload",
+   "fieldtype": "Data",
+   "label": "Z\u8f74\u8d1f\u8f7d"
+  },
+  {
+   "fieldname": "alarmcode",
+   "fieldtype": "Data",
+   "label": "\u62a5\u8b66\u4ee3\u7801"
+  },
+  {
+   "fieldname": "alarmmessage",
+   "fieldtype": "Data",
+   "label": "\u62a5\u8b66\u63cf\u8ff0"
+  },
+  {
+   "fieldname": "break_column",
+   "fieldtype": "Column Break",
+   "label": "Break"
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2025-08-04 21:55:46.421132",
+ "modified_by": "Administrator",
+ "module": "IoT Management",
+ "name": "CNCData",
+ "naming_rule": "Expression",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

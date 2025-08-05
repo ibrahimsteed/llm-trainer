@@ -1,0 +1,87 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "format:sp-{####}",
+ "creation": "2025-07-25 09:52:51.095745",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "partid",
+  "partname",
+  "description",
+  "applicablemodel",
+  "supplier",
+  "stockquantity",
+  "unitprice",
+  "leadtimedays"
+ ],
+ "fields": [
+  {
+   "fieldname": "partid",
+   "fieldtype": "Data",
+   "label": "\u90e8\u4ef6\u53f7"
+  },
+  {
+   "fieldname": "partname",
+   "fieldtype": "Data",
+   "label": "\u90e8\u4ef6\u540d\u79f0"
+  },
+  {
+   "fieldname": "description",
+   "fieldtype": "Data",
+   "label": "\u63cf\u8ff0"
+  },
+  {
+   "fieldname": "applicablemodel",
+   "fieldtype": "Data",
+   "label": "\u9002\u7528\u6a21\u5f0f"
+  },
+  {
+   "fieldname": "supplier",
+   "fieldtype": "Data",
+   "label": "\u4f9b\u5e94\u5546"
+  },
+  {
+   "fieldname": "stockquantity",
+   "fieldtype": "Data",
+   "label": "\u5e93\u5b58\u6570\u91cf"
+  },
+  {
+   "fieldname": "unitprice",
+   "fieldtype": "Data",
+   "label": "\u5355\u4ef7"
+  },
+  {
+   "fieldname": "leadtimedays",
+   "fieldtype": "Data",
+   "label": "\u91c7\u8d2d\u63d0\u524d\u671f"
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2025-07-25 09:56:28.870270",
+ "modified_by": "Administrator",
+ "module": "IoT Management",
+ "name": "RMMSSpareParts",
+ "naming_rule": "Expression",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

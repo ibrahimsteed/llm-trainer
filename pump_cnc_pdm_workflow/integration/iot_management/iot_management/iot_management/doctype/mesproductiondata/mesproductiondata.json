@@ -1,0 +1,93 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "format:prd-{####}",
+ "creation": "2025-07-24 15:09:54.446143",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "workorderid",
+  "equipmentid",
+  "productid",
+  "productname",
+  "plannedquantity",
+  "actualquantity",
+  "starttime",
+  "endtime",
+  "operatorid"
+ ],
+ "fields": [
+  {
+   "fieldname": "workorderid",
+   "fieldtype": "Data",
+   "label": "\u5de5\u5355\u53f7"
+  },
+  {
+   "fieldname": "equipmentid",
+   "fieldtype": "Data",
+   "label": "\u8bbe\u5907\u7f16\u53f7"
+  },
+  {
+   "fieldname": "productid",
+   "fieldtype": "Data",
+   "label": "\u4ea7\u54c1\u7f16\u53f7"
+  },
+  {
+   "fieldname": "productname",
+   "fieldtype": "Data",
+   "label": "\u4ea7\u54c1\u540d\u79f0"
+  },
+  {
+   "fieldname": "plannedquantity",
+   "fieldtype": "Data",
+   "label": "\u8ba1\u5212\u52a0\u5de5\u4ef6\u6570"
+  },
+  {
+   "fieldname": "actualquantity",
+   "fieldtype": "Data",
+   "label": "\u5b9e\u9645\u52a0\u5de5\u4ef6\u6570"
+  },
+  {
+   "fieldname": "starttime",
+   "fieldtype": "Data",
+   "label": "\u5f00\u59cb\u65f6\u95f4"
+  },
+  {
+   "fieldname": "endtime",
+   "fieldtype": "Data",
+   "label": "\u7ed3\u675f\u65f6\u95f4"
+  },
+  {
+   "fieldname": "operatorid",
+   "fieldtype": "Data",
+   "label": "\u64cd\u4f5c\u5458\u7f16\u53f7"
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2025-07-24 17:56:21.018584",
+ "modified_by": "Administrator",
+ "module": "IoT Management",
+ "name": "MESProductionData",
+ "naming_rule": "Expression",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

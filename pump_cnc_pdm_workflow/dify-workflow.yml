@@ -1,0 +1,1503 @@
+app:
+  description: ''
+  icon: 🤖
+  icon_background: '#FFEAD5'
+  mode: workflow
+  name: 水泵企业数控机床预测性维护
+  use_icon_as_answer_icon: false
+dependencies:
+- current_identifier: null
+  type: marketplace
+  value:
+    marketplace_plugin_unique_identifier: langgenius/tongyi:0.0.33@f5f1cd51a6c6b9506c39c7d41c9caf5f0ab795ef4e1fef714e63c74b6a406074
+- current_identifier: null
+  type: marketplace
+  value:
+    marketplace_plugin_unique_identifier: junjiem/mcp_sse:0.2.1@53cc613667fcf91dd7208dd5f6d2c8df3c7ff0af8b79e8f3c0a430f1b39bda4c
+kind: app
+version: 0.3.0
+workflow:
+  conversation_variables: []
+  environment_variables: []
+  features:
+    file_upload:
+      allowed_file_extensions:
+      - .JPG
+      - .JPEG
+      - .PNG
+      - .GIF
+      - .WEBP
+      - .SVG
+      allowed_file_types:
+      - image
+      allowed_file_upload_methods:
+      - local_file
+      - remote_url
+      enabled: false
+      fileUploadConfig:
+        audio_file_size_limit: 50
+        batch_count_limit: 5
+        file_size_limit: 15
+        image_file_size_limit: 10
+        video_file_size_limit: 100
+        workflow_file_upload_limit: 10
+      image:
+        enabled: false
+        number_limits: 3
+        transfer_methods:
+        - local_file
+        - remote_url
+      number_limits: 3
+    opening_statement: ''
+    retriever_resource:
+      enabled: true
+    sensitive_word_avoidance:
+      enabled: false
+    speech_to_text:
+      enabled: false
+    suggested_questions: []
+    suggested_questions_after_answer:
+      enabled: false
+    text_to_speech:
+      enabled: false
+      language: ''
+      voice: ''
+  graph:
+    edges:
+    - data:
+        isInIteration: false
+        isInLoop: false
+        sourceType: start
+        targetType: tool
+      id: 1752883212932-source-1752883335096-target
+      source: '1752883212932'
+      sourceHandle: source
+      target: '1752883335096'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        isInLoop: false
+        sourceType: tool
+        targetType: code
+      id: 1752883335096-source-1753413415951-target
+      source: '1752883335096'
+      sourceHandle: source
+      target: '1753413415951'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        isInLoop: false
+        sourceType: code
+        targetType: if-else
+      id: 1753413415951-source-1753435172356-target
+      source: '1753413415951'
+      sourceHandle: source
+      target: '1753435172356'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        isInLoop: false
+        sourceType: if-else
+        targetType: end
+      id: 1753435172356-false-1753435293795-target
+      source: '1753435172356'
+      sourceHandle: 'false'
+      target: '1753435293795'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        isInLoop: false
+        sourceType: if-else
+        targetType: http-request
+      id: 1753435172356-true-1753445891263-target
+      source: '1753435172356'
+      sourceHandle: 'true'
+      target: '1753445891263'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        isInLoop: false
+        sourceType: http-request
+        targetType: http-request
+      id: 1753445891263-source-1753453571739-target
+      source: '1753445891263'
+      sourceHandle: source
+      target: '1753453571739'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        isInLoop: false
+        sourceType: http-request
+        targetType: http-request
+      id: 1753453571739-source-1753453967176-target
+      source: '1753453571739'
+      sourceHandle: source
+      target: '1753453967176'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        isInLoop: false
+        sourceType: http-request
+        targetType: knowledge-retrieval
+      id: 1753453967176-source-1753454084283-target
+      source: '1753453967176'
+      sourceHandle: source
+      target: '1753454084283'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        isInLoop: false
+        sourceType: knowledge-retrieval
+        targetType: llm
+      id: 1753454084283-source-1753454477691-target
+      source: '1753454084283'
+      sourceHandle: source
+      target: '1753454477691'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        isInLoop: false
+        sourceType: llm
+        targetType: code
+      id: 1753454477691-source-1753456473838-target
+      source: '1753454477691'
+      sourceHandle: source
+      target: '1753456473838'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        isInLoop: false
+        sourceType: code
+        targetType: http-request
+      id: 1753456473838-source-1753457936915-target
+      source: '1753456473838'
+      sourceHandle: source
+      target: '1753457936915'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        isInLoop: false
+        sourceType: http-request
+        targetType: code
+      id: 1753457936915-source-1753458236299-target
+      source: '1753457936915'
+      sourceHandle: source
+      target: '1753458236299'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        isInLoop: false
+        sourceType: code
+        targetType: llm
+      id: 1753458236299-source-1753459374823-target
+      source: '1753458236299'
+      sourceHandle: source
+      target: '1753459374823'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        isInLoop: false
+        sourceType: llm
+        targetType: end
+      id: 1753459374823-source-1752883406104-target
+      source: '1753459374823'
+      sourceHandle: source
+      target: '1752883406104'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    nodes:
+    - data:
+        desc: ''
+        selected: false
+        title: 开始
+        type: start
+        variables:
+        - label: 数控机床数采记录编号
+          max_length: 48
+          options: []
+          required: false
+          type: text-input
+          variable: cnc_data_id
+      height: 88
+      id: '1752883212932'
+      position:
+        x: 80
+        y: 282
+      positionAbsolute:
+        x: 80
+        y: 282
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 242
+    - data:
+        desc: ''
+        is_team_authorization: false
+        output_schema: null
+        paramSchemas:
+        - auto_generate: null
+          default: null
+          form: llm
+          human_description:
+            en_US: Name of the tool to execute.
+            ja_JP: Name of the tool to execute.
+            pt_BR: Name of the tool to execute.
+            zh_Hans: 要执行的工具的名称。
+          label:
+            en_US: Tool Name
+            ja_JP: Tool Name
+            pt_BR: Tool Name
+            zh_Hans: 工具名称
+          llm_description: Name of the MCP tool to execute.
+          max: null
+          min: null
+          name: tool_name
+          options: []
+          placeholder: null
+          precision: null
+          required: true
+          scope: null
+          template: null
+          type: string
+        - auto_generate: null
+          default: null
+          form: llm
+          human_description:
+            en_US: Tool arguments (JSON string in the python dict[str, Any] format).
+            ja_JP: Tool arguments (JSON string in the python dict[str, Any] format).
+            pt_BR: Tool arguments (JSON string in the python dict[str, Any] format).
+            zh_Hans: 工具的参数。
+          label:
+            en_US: Arguments
+            ja_JP: Arguments
+            pt_BR: Arguments
+            zh_Hans: 参数
+          llm_description: MCP Tool arguments (JSON string in the python dict[str,
+            Any] format).
+          max: null
+          min: null
+          name: arguments
+          options: []
+          placeholder: null
+          precision: null
+          required: true
+          scope: null
+          template: null
+          type: string
+        - auto_generate: null
+          default: 1
+          form: form
+          human_description:
+            en_US: Fetch and call the preset MCP Resources as Tools.
+            ja_JP: Fetch and call the preset MCP Resources as Tools.
+            pt_BR: Fetch and call the preset MCP Resources as Tools.
+            zh_Hans: 将预设的 MCP Resources 作为 Tools 返回和调用。
+          label:
+            en_US: MCP Resources as Tools
+            ja_JP: MCP Resources as Tools
+            pt_BR: MCP Resources as Tools
+            zh_Hans: MCP 资源作为工具
+          llm_description: ''
+          max: null
+          min: null
+          name: resources_as_tools
+          options: []
+          placeholder: null
+          precision: null
+          required: true
+          scope: null
+          template: null
+          type: boolean
+        - auto_generate: null
+          default: 1
+          form: form
+          human_description:
+            en_US: Fetch and call the preset MCP Prompts as Tools.
+            ja_JP: Fetch and call the preset MCP Prompts as Tools.
+            pt_BR: Fetch and call the preset MCP Prompts as Tools.
+            zh_Hans: 将预设的 MCP Prompts 作为 Tools 返回和调用。
+          label:
+            en_US: MCP Prompts as Tools
+            ja_JP: MCP Prompts as Tools
+            pt_BR: MCP Prompts as Tools
+            zh_Hans: MCP 提示词作为工具
+          llm_description: ''
+          max: null
+          min: null
+          name: prompts_as_tools
+          options: []
+          placeholder: null
+          precision: null
+          required: true
+          scope: null
+          template: null
+          type: boolean
+        - auto_generate: null
+          default: null
+          form: llm
+          human_description:
+            en_US: MCP Servers config, support multiple MCP services. (Optional, Filling
+              in this field will overwrite the MCP Servers config entered during authorization.)
+            ja_JP: MCP Servers config, support multiple MCP services. (Optional, Filling
+              in this field will overwrite the MCP Servers config entered during authorization.)
+            pt_BR: MCP Servers config, support multiple MCP services. (Optional, Filling
+              in this field will overwrite the MCP Servers config entered during authorization.)
+            zh_Hans: MCP服务配置，支持多个MCP服务。 （选填，填写后将覆盖授权时填写的MCP服务配置。）
+          label:
+            en_US: MCP Servers config
+            ja_JP: MCP Servers config
+            pt_BR: MCP Servers config
+            zh_Hans: MCP 服务配置
+          llm_description: ''
+          max: null
+          min: null
+          name: servers_config
+          options: []
+          placeholder: null
+          precision: null
+          required: false
+          scope: null
+          template: null
+          type: string
+        params:
+          arguments: ''
+          prompts_as_tools: ''
+          resources_as_tools: ''
+          servers_config: ''
+          tool_name: ''
+        provider_id: junjiem/mcp_sse/mcp_sse
+        provider_name: junjiem/mcp_sse/mcp_sse
+        provider_type: builtin
+        selected: true
+        title: MCP客户端-GET_CNC_DATA_SNAPSHOT
+        tool_configurations:
+          prompts_as_tools:
+            type: constant
+            value: false
+          resources_as_tools:
+            type: constant
+            value: false
+        tool_description: 调用 MCP 服务端工具。
+        tool_label: 调用 MCP 工具
+        tool_name: mcp_sse_call_tool
+        tool_parameters:
+          arguments:
+            type: mixed
+            value: '{"cnc_data_id": "{{#1752883212932.cnc_data_id#}}"}'
+          servers_config:
+            type: mixed
+            value: "   {\n     \"iot_cnc_data\": {\n       \"transport\": \"streamable_http\"\
+              , \n       \"url\": \"http://192.168.200.100:6019/mcp\",\n       \"\
+              timeout\": 60\n     }\n   }"
+          tool_name:
+            type: mixed
+            value: get_iot_cnc_data_by_id
+        type: tool
+        version: '2'
+      height: 146
+      id: '1752883335096'
+      position:
+        x: 382.9429819594386
+        y: 282
+      positionAbsolute:
+        x: 382.9429819594386
+        y: 282
+      selected: true
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 242
+    - data:
+        desc: ''
+        outputs:
+        - value_selector:
+          - '1753459374823'
+          - text
+          value_type: string
+          variable: result_if
+        selected: false
+        title: 结束
+        type: end
+      height: 88
+      id: '1752883406104'
+      position:
+        x: 689.0514424207126
+        y: 1465.775609720194
+      positionAbsolute:
+        x: 689.0514424207126
+        y: 1465.775609720194
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 242
+    - data:
+        code: "import json\nimport re\nimport ast\n\ndef analyze_and_decide(text_content:\
+          \ str) -> dict:\n\n    try:\n        if not text_content: raise ValueError(\"\
+          输入的文本内容为空。\")\n        match = re.search(r\"```json\\s*([\\s\\S]*?)\\s*```\"\
+          , text_content)\n        if not match: raise ValueError(\"在文本内容中未找到格式为 ```json\
+          \ ... ``` 的数据块。\")\n        json_like_str = match.group(1).strip()\n   \
+          \     cnc_data = ast.literal_eval(json_like_str)\n        spindle_load =\
+          \ float(cnc_data.get('spindle_load', 0))\n        z_axis_load = float(cnc_data.get('z_axis_load',\
+          \ 0))\n        equipment_id = cnc_data.get('equipment_id', 'Unknown')\n\
+          \        timestamp = cnc_data.get('created_at', 'N/A')\n        alarm_message\
+          \ = cnc_data.get('alarm_message', '').strip()\n        SPINDLE_LOAD_THRESHOLD\
+          \ = 85.0\n        Z_AXIS_LOAD_THRESHOLD = 75.0\n        decide_flag = 0\n\
+          \        reason = \"设备状态正常。\"\n        if alarm_message and alarm_message\
+          \ != 'nan':\n            decide_flag = 1\n            reason = f\"设备直接告警:\
+          \ {alarm_message}\"\n        elif spindle_load > SPINDLE_LOAD_THRESHOLD\
+          \ or z_axis_load > Z_AXIS_LOAD_THRESHOLD:\n            decide_flag = 1\n\
+          \            reason_parts = []\n            if spindle_load > SPINDLE_LOAD_THRESHOLD:\
+          \ reason_parts.append(f\"主轴负载高达 {spindle_load}% (阈值: {SPINDLE_LOAD_THRESHOLD}%)\"\
+          )\n            if z_axis_load > Z_AXIS_LOAD_THRESHOLD: reason_parts.append(f\"\
+          Z轴负载高达 {z_axis_load}% (阈值: {Z_AXIS_LOAD_THRESHOLD}%)\")\n            reason\
+          \ = \" | \".join(reason_parts)\n        output = {\n            \"decide_flag\"\
+          : decide_flag,\n            \"analysis_summary\": f\"设备ID: {equipment_id}\
+          \ 在 {timestamp} 的状态分析完成。\",\n            \"abnormal_reason\": reason,\n\
+          \            \"key_metrics\": f\"主轴负载: {spindle_load}%, Z轴负载: {z_axis_load}%\"\
+          ,\n            \"equipment_id\": equipment_id\n        }\n        return\
+          \ output\n    except Exception as e:\n        return { \"decide_flag\":\
+          \ 0, \"error\": f\"解析IoT数据时出错: {str(e)}\", \"abnormal_reason\": \"数据处理异常\"\
+          \ }\n\n\ndef main(iot_data: str) -> dict:\n    \"\"\"\n    Dify工作流会调用此主函数。\n\
+          \    此函数直接返回分析结果字典，其每个键都将成为一个独立的输出变量。\n    \"\"\"\n    # 直接返回分析函数的字典结果\n\
+          \    return analyze_and_decide(iot_data)"
+        code_language: python3
+        desc: ''
+        outputs:
+          abnormal_reason:
+            children: null
+            type: string
+          analysis_summary:
+            children: null
+            type: string
+          decide_flag:
+            children: null
+            type: number
+          equipment_id:
+            children: null
+            type: string
+          key_metrics:
+            children: null
+            type: string
+        selected: false
+        title: Code-ANALYZE_IOT_DATA
+        type: code
+        variables:
+        - value_selector:
+          - '1752883335096'
+          - text
+          value_type: string
+          variable: iot_data
+      height: 52
+      id: '1753413415951'
+      position:
+        x: 682.9601174845695
+        y: 282
+      positionAbsolute:
+        x: 682.9601174845695
+        y: 282
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 242
+    - data:
+        cases:
+        - case_id: 'true'
+          conditions:
+          - comparison_operator: '='
+            id: 3b7d8448-26f0-48ac-bcde-0e70f17d578b
+            value: '1'
+            varType: number
+            variable_selector:
+            - '1753413415951'
+            - decide_flag
+          id: 'true'
+          logical_operator: and
+        desc: ''
+        selected: false
+        title: IF/ELSE-CHECK_MAINTENANCE_FLAG
+        type: if-else
+      height: 124
+      id: '1753435172356'
+      position:
+        x: 697.8031973136701
+        y: 413.80105144543916
+      positionAbsolute:
+        x: 697.8031973136701
+        y: 413.80105144543916
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 242
+    - data:
+        desc: ''
+        outputs:
+        - value_selector:
+          - '1753413415951'
+          - decide_flag
+          value_type: number
+          variable: result_else
+        selected: false
+        title: End 2
+        type: end
+      height: 88
+      id: '1753435293795'
+      position:
+        x: 1029.2928278676939
+        y: 561.1053501129869
+      positionAbsolute:
+        x: 1029.2928278676939
+        y: 561.1053501129869
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 242
+    - data:
+        authorization:
+          config: null
+          type: no-auth
+        body:
+          data:
+          - type: text
+            value: ''
+          type: none
+        desc: ''
+        headers: ''
+        method: get
+        params: equipment_id:{{#1753413415951.equipment_id#}}
+        retry_config:
+          max_retries: 3
+          retry_enabled: true
+          retry_interval: 1080
+        selected: false
+        ssl_verify: false
+        timeout:
+          connect: 100
+          max_connect_timeout: 0
+          max_read_timeout: 0
+          max_write_timeout: 0
+          read: 100
+          write: 100
+        title: HTTP请求-GET_Maintenance_History
+        type: http-request
+        url: http://iot.datawits.net:8000/api/method/frappe.integrations.api_dify.get_iot_maintenance_history
+        variables: []
+      height: 171
+      id: '1753445891263'
+      position:
+        x: -37.49457350312821
+        y: 663.5899914006718
+      positionAbsolute:
+        x: -37.49457350312821
+        y: 663.5899914006718
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 242
+    - data:
+        authorization:
+          config: null
+          type: no-auth
+        body:
+          data:
+          - type: text
+            value: ''
+          type: none
+        desc: ''
+        headers: ''
+        method: get
+        params: ''
+        retry_config:
+          max_retries: 3
+          retry_enabled: true
+          retry_interval: 100
+        selected: false
+        ssl_verify: true
+        timeout:
+          max_connect_timeout: 0
+          max_read_timeout: 0
+          max_write_timeout: 0
+        title: HTTP请求-GET_Failure_Cases
+        type: http-request
+        url: http://iot.datawits.net:8000/api/method/frappe.integrations.api_dify.get_iot_failure_cases
+        variables: []
+      height: 155
+      id: '1753453571739'
+      position:
+        x: 338.51772974235485
+        y: 671.8361468612833
+      positionAbsolute:
+        x: 338.51772974235485
+        y: 671.8361468612833
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 242
+    - data:
+        authorization:
+          config: null
+          type: no-auth
+        body:
+          data:
+          - type: text
+            value: ''
+          type: none
+        desc: ''
+        headers: ''
+        method: get
+        params: equipment_id:{{#1753413415951.equipment_id#}}
+        retry_config:
+          max_retries: 3
+          retry_enabled: true
+          retry_interval: 100
+        selected: false
+        ssl_verify: true
+        timeout:
+          max_connect_timeout: 0
+          max_read_timeout: 0
+          max_write_timeout: 0
+        title: HTTP请求-GET_MES_Production
+        type: http-request
+        url: http://iot.datawits.net:8000/api/method/frappe.integrations.api_dify.get_iot_production_data
+        variables: []
+      height: 171
+      id: '1753453967176'
+      position:
+        x: 689.0514424207126
+        y: 671.8361468612833
+      positionAbsolute:
+        x: 689.0514424207126
+        y: 671.8361468612833
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 242
+    - data:
+        dataset_ids:
+        - NusCahG9NyMW+HSknGHdDBcZnajAmw9Ugy7sQE6Rkv4XMd4QRcD6o5lNN5lhGKwW
+        desc: ''
+        multiple_retrieval_config:
+          reranking_enable: false
+          reranking_mode: reranking_model
+          reranking_model:
+            model: gte-rerank-v2
+            provider: langgenius/tongyi/tongyi
+          top_k: 4
+        query_variable_selector:
+        - '1752883335096'
+        - text
+        retrieval_mode: multiple
+        selected: false
+        title: 知识检索-RETRIEVE_TECHNICAL_DOCS
+        type: knowledge-retrieval
+      height: 90
+      id: '1753454084283'
+      position:
+        x: 1035.4940112703148
+        y: 836.0332812355517
+      positionAbsolute:
+        x: 1035.4940112703148
+        y: 836.0332812355517
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 242
+    - data:
+        context:
+          enabled: true
+          variable_selector:
+          - '1753454084283'
+          - result
+        desc: ''
+        model:
+          completion_params:
+            temperature: 0.7
+          mode: chat
+          name: qwen-plus
+          provider: langgenius/tongyi/tongyi
+        prompt_template:
+        - id: 9881e76b-2a88-4b99-942b-8db98e971eb2
+          role: system
+          text: '# Role and Goal
+
+            You are a senior predictive maintenance expert specializing in CNC machine
+            tools for advanced manufacturing. Your expertise lies in analyzing complex,
+            multi-source data from industrial systems (IIoT, MES, RMMS) and technical
+            documentation to diagnose impending equipment failures with high accuracy.
+
+            Please output in Chinese.
+
+
+            # Core Task
+
+            Your primary function is to act as a diagnostic engine. You will be provided
+            with a comprehensive data packet concerning a specific CNC machine showing
+            anomalous behavior. Your task is to:
+
+            1.  **Synthesize the Data**: Methodically review and correlate all provided
+            data points.
+
+            2.  **Reason Step-by-Step**: Explain your diagnostic logic, connecting
+            the symptoms (IIoT data) with the context (MES data) and historical knowledge
+            (RMMS records, failure cases, and knowledge base documents).
+
+            3.  **Identify the Failure Mode**: Determine the most probable root cause
+            of the observed anomaly.
+
+            4.  **Pinpoint the Required Part**: Identify the single, most critical
+            spare part required to resolve the issue.
+
+
+            # Critical Output Constraint
+
+            You MUST conclude your entire analysis with a specific, machine-readable
+            line to identify the required spare part. This line must be the very last
+            thing in your response and must follow this exact format, with no additional
+            text or formatting:
+
+            `Required Part ID: [PART_ID]`
+
+
+            For example: `Required Part ID: SP-BR-001`'
+        - id: 5d7ca552-d246-458f-9f46-d7ee22cceeaf
+          role: user
+          text: "Analyze the following integrated data packet for CNC machine `{{#1753413415951.equipment_id#}}`\
+            \ and predict the most likely failure mode and the required spare part.\n\
+            \n---\n## 1. Real-time Anomaly Data (from IIoT Platform)\nThis is the\
+            \ event that triggered the analysis.\n\n- **Triggering Reason**: \n{{#1753413415951.abnormal_reason#}}\n\
+            \n- **Key Metrics**: \n{{#1753413415951.key_metrics#}}\n\n- **Timestamp\
+            \ of Anomaly**: \n{{#1753413415951.analysis_summary#}}\n\n---\n## 2. Production\
+            \ Context (from MES)\nThis data shows what the machine was doing when\
+            \ the anomaly occurred.\n\n- **Current/Last Work Order Details (JSON Format)**:\
+            \ \n\n```json\n{{#1753453967176.body#}}\n```\n\n## 3. Historical Data\
+            \ & Knowledge Base (from RMMS & RAGKB)\n\nThis provides historical context,\
+            \ similar past issues, and expert knowledge.\n\n### 3.1 Equipment-Specific\
+            \ Maintenance History (RMMS)\n\nThis shows past maintenance performed\
+            \ on THIS specific machine ({{#1753413415951.equipment_id#}}).\n\n```json\n\
+            {{#1753445891263.body#}}\n```\n\n### 3.2 Relevant Historical Failure Cases\
+            \ (RMMS)\n\nThese are structured cases from similar equipment models that\
+            \ match the current symptoms.\n\n```json\n{{#1753453571739.body#}}\n```\n\
+            \n### 3.3 Knowledge Base Insights (RAGKB)\n\nThese are relevant excerpts\
+            \ retrieved from technical manuals and in-depth case studies.\n\n```json\n\
+            {{#context#}}\n```\n\n## Your Task & Analysis\n\nBased on all the information\
+            \ provided above, perform the following:\n\n-   **Analysis and Reasoning**:\
+            \ Provide a step-by-step analysis correlating the data. For instance,\
+            \ explain how the real-time sensor readings, the specific workpiece being\
+            \ machined, past maintenance, and knowledge base articles together point\
+            \ to a specific conclusion.\n    \n-   **Probable Failure Mode**: Clearly\
+            \ state the most likely technical failure (e.g., \"Main spindle bearing\
+            \ wear due to contamination\").\n    \n-   **Final Prediction**: Conclude\
+            \ your response with the required part ID in the mandatory format.\n \
+            \   \n\n**Example of a good response structure:**\n\n> **Analysis and\
+            \ Reasoning:**  \n> The IIoT data shows a critical spike in spindle load\
+            \ (92.5%) and Z-axis load (76.9%), which began while processing a '3B型水泵叶轮'\
+            \ (from MES data). The RAGKB knowledge base explicitly states that spindle\
+            \ loads consistently above 80% indicate abnormal conditions, often related\
+            \ to bearings or tooling. The RMMS failure case database (CASE-SP-001)\
+            \ for this exact machine model links these symptoms directly to \"主轴轴承磨损\"\
+            \ (spindle bearing wear). Although the machine had preventive maintenance\
+            \ two months ago, there is no record of bearing replacement in its specific\
+            \ history. The combination of real-time symptoms and historical knowledge\
+            \ strongly suggests a bearing failure rather than a simple tooling issue.\n\
+            > \n> **Probable Failure Mode:**  \n> Advanced wear of the main spindle\
+            \ bearing unit.\n> \n> **Required Part ID:** SP-BR-001\n\n**Begin your\
+            \ analysis now. Please output in Chinese.**\n"
+        selected: false
+        title: LLM-FAULT_PREDICTION
+        type: llm
+        variables: []
+        vision:
+          enabled: false
+      height: 88
+      id: '1753454477691'
+      position:
+        x: -43.83467619744556
+        y: 1056.451420156068
+      positionAbsolute:
+        x: -43.83467619744556
+        y: 1056.451420156068
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 242
+    - data:
+        code: "import json\nimport re\n\ndef extract_part_id(llm_input) -> dict:\n\
+          \    \"\"\"\n    从上游LLM节点的输出中精确提取备件ID。\n    此函数能适应两种输入格式：\n    1. 纯文本字符串。\n\
+          \    2. 包含 'llm_output' 键的JSON对象/字典。\n    同时，它能处理目标行被反引号(`)包裹的情况。\n\n  \
+          \  :param llm_input: 从上游LLM节点获取的完整输入，可以是字符串或字典。\n    :return: 一个包含提取到的备件ID和执行状态的字典。\n\
+          \    \"\"\"\n    llm_output_text = \"\"\n    try:\n        # 步骤1: 智能地提取文本内容\n\
+          \        if isinstance(llm_input, dict):\n            # 如果输入是字典，尝试获取 'llm_output'\
+          \ 键的值\n            llm_output_text = llm_input.get('llm_output', '')\n \
+          \           if not llm_output_text:\n                # 兼容Dify标准的 .text 输出\n\
+          \                llm_output_text = llm_input.get('text', '')\n        elif\
+          \ isinstance(llm_input, str):\n            # 如果输入直接就是字符串\n            llm_output_text\
+          \ = llm_input\n        else:\n            raise TypeError(\"Input is not\
+          \ a recognized type (dict or str).\")\n            \n        if not llm_output_text:\n\
+          \             return {\n                \"required_partId\": \"NO_TEXT_INPUT\"\
+          ,\n                \"extraction_status\": \"Failed: The input text from\
+          \ the LLM node was empty.\"\n            }\n\n        # 步骤2: 更新正则表达式以适应反引号\n\
+          \        # 模式解释:\n        # `?                 - 匹配0个或1个可选的反引号\n       \
+          \ # Required Part ID: - 匹配字面文本 (不区分大小写)\n        # \\s*               -\
+          \ 匹配任意空白\n        # ([A-Z0-9\\-]+)     - 捕获目标ID\n        # `?          \
+          \       - 匹配0个或1个可选的结尾反引号\n        pattern = r\"`?Required Part ID:\\s*([A-Z0-9\\\
+          -]+)`?\"\n        \n        # 我们不再限制必须在行首行尾，因为这行本身就足够独特\n        match =\
+          \ re.search(pattern, llm_output_text, re.IGNORECASE)\n\n        if match:\n\
+          \            required_part_id = match.group(1)\n            return {\n \
+          \               \"required_partId\": required_part_id,\n               \
+          \ \"extraction_status\": \"Success\"\n            }\n        else:\n   \
+          \         return {\n                \"required_partId\": \"NOT_FOUND\",\n\
+          \                \"extraction_status\": \"Failed: No valid Part ID line\
+          \ was found in the text.\"\n            }\n            \n    except Exception\
+          \ as e:\n        return {\n            \"required_partId\": \"ERROR\",\n\
+          \            \"extraction_status\": f\"An error occurred during extraction:\
+          \ {str(e)}\"\n        }\n\ndef main(llm_data) -> dict:\n    \"\"\"\n   \
+          \ Dify工作流的入口函数。\n    它接收上游节点的完整输出，并调用处理函数。\n    \"\"\"\n    return extract_part_id(llm_data)"
+        code_language: python3
+        desc: ''
+        outputs:
+          extraction_status:
+            children: null
+            type: string
+          required_partId:
+            children: null
+            type: string
+        selected: false
+        title: CODE-EXTRACT_PART_ID
+        type: code
+        variables:
+        - value_selector:
+          - '1753454477691'
+          - text
+          value_type: string
+          variable: llm_data
+      height: 52
+      id: '1753456473838'
+      position:
+        x: 329.5092005866122
+        y: 1072.6949533191164
+      positionAbsolute:
+        x: 329.5092005866122
+        y: 1072.6949533191164
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 242
+    - data:
+        authorization:
+          config: null
+          type: no-auth
+        body:
+          data:
+          - type: text
+            value: ''
+          type: none
+        desc: ''
+        headers: ''
+        method: get
+        params: part_id:{{#1753456473838.required_partId#}}
+        retry_config:
+          max_retries: 3
+          retry_enabled: true
+          retry_interval: 100
+        selected: false
+        ssl_verify: true
+        timeout:
+          max_connect_timeout: 0
+          max_read_timeout: 0
+          max_write_timeout: 0
+        title: HTTP请求-GET_SPARE_PART_INFO
+        type: http-request
+        url: http://iot.datawits.net:8000/api/method/frappe.integrations.api_dify.get_iot_spare_parts
+        variables: []
+      height: 155
+      id: '1753457936915'
+      position:
+        x: 674.838350903045
+        y: 1056.451420156068
+      positionAbsolute:
+        x: 674.838350903045
+        y: 1056.451420156068
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 242
+    - data:
+        code: "import json\n\ndef parse_and_format_rmms_data(input_json_string: str)\
+          \ -> dict:\n    \"\"\"\n    解析从RMMS系统获取的、作为字符串的JSON响应，并将其格式化为人类可读的文本。\n\
+          \    此版本直接解析输入的JSON字符串，不再处理任何嵌套结构。\n\n    :param input_json_string: 一个包含API响应的JSON格式字符串。\n\
+          \    :return: 一个包含格式化文本或错误信息的字典。\n    \"\"\"\n    try:\n        # 步骤1: 直接解析输入的JSON字符串，得到Python字典。\n\
+          \        data = json.loads(input_json_string)\n\n        # 步骤2: 安全地导航到包含备件数据的列表。\n\
+          \        parts_list = data.get('message', {}).get('data', [])\n\n      \
+          \  # 步骤3: 检查备件列表是否为空。\n        if not parts_list:\n            return {\n\
+          \                \"parsed_rmms_info\": \"备件信息查询成功，但未返回任何具体的备件记录。\"\n   \
+          \         }\n\n        # 步骤4: 遍历备件列表并格式化每一条记录。\n        formatted_parts\
+          \ = []\n        for part in parts_list:\n            stock_quantity = int(part.get('stock_quantity',\
+          \ 0))\n            availability = \"有货\" if stock_quantity > 0 else \"无货，需采购\"\
+          \n\n            part_info = (\n                f\"- 备件ID: {part.get('part_id',\
+          \ 'N/A')}\\n\"\n                f\"  名称: {part.get('part_name', 'N/A')}\\\
+          n\"\n                f\"  状态: {availability}\\n\"\n                f\" \
+          \ 当前库存: {stock_quantity} 件\\n\"\n                f\"  采购提前期: {part.get('lead_time_days',\
+          \ 'N/A')} 天\\n\"\n                f\"  适用型号: {part.get('applicable_model',\
+          \ 'N/A')}\\n\"\n                f\"  供应商: {part.get('supplier', 'N/A')}\\\
+          n\"\n                f\"  参考单价: {part.get('unit_price', 'N/A')} 元\"\n  \
+          \          )\n            formatted_parts.append(part_info)\n        \n\
+          \        # 步骤5: 将所有格式化后的备件信息合并成一个单一的文本块。\n        final_output = \"\\n\\\
+          n\".join(formatted_parts)\n        \n        return {\"parsed_rmms_info\"\
+          : final_output}\n\n    except json.JSONDecodeError as e:\n        return\
+          \ {\"parsed_rmms_info\": f\"错误：输入的RMMS数据不是有效的JSON格式字符串。错误详情: {e}\"}\n  \
+          \  except Exception as e:\n        return {\"parsed_rmms_info\": f\"解析RMMS备件数据时出现未知错误:\
+          \ {str(e)}\"}\n\ndef main(rmms_input_string: str) -> dict:\n    \"\"\"\n\
+          \    Dify工作流的入口函数。\n    它接收一个JSON字符串作为输入，并调用核心处理函数。\n    \"\"\"\n    if\
+          \ not rmms_input_string:\n        return {\n            \"parsed_rmms_info\"\
+          : \"错误：输入变量为空。\"\n        }\n    return parse_and_format_rmms_data(rmms_input_string)"
+        code_language: python3
+        desc: ''
+        outputs:
+          parsed_rmms_info:
+            children: null
+            type: string
+        selected: false
+        title: CODE-PARSE_RMMS_DATA
+        type: code
+        variables:
+        - value_selector:
+          - '1753457936915'
+          - body
+          value_type: string
+          variable: rmms_input_string
+      height: 52
+      id: '1753458236299'
+      position:
+        x: 1035.4940112703148
+        y: 1072.6949533191164
+      positionAbsolute:
+        x: 1035.4940112703148
+        y: 1072.6949533191164
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 242
+    - data:
+        context:
+          enabled: false
+          variable_selector: []
+        desc: ''
+        model:
+          completion_params:
+            temperature: 0.7
+          mode: chat
+          name: qwen-plus
+          provider: langgenius/tongyi/tongyi
+        prompt_template:
+        - id: 4389fbc3-964d-4167-b855-817233a1b72f
+          role: system
+          text: '# Role and Goal
+
+            You are a Senior Maintenance Planner and Technical Support Engineer for
+            industrial CNC machinery. Your primary responsibility is to convert diagnostic
+            findings into comprehensive, safe, and actionable maintenance work orders
+            for the shop floor team.
+
+
+            # Core Task
+
+            You will be provided with a fault diagnosis report and the real-time availability
+            of the required spare part. Your task is to generate a formal "Predictive
+            Maintenance Work Order". This document must be clear, concise, and unambiguous,
+            providing all necessary information for a technician to complete the job
+            efficiently and safely.
+
+
+            # Output Structure and Quality Requirements
+
+            Your response MUST be a single, well-formatted Markdown document. Adhere
+            strictly to the following structure:
+
+
+            1.  **Work Order Header**: Include a title, a unique Work Order ID, the
+            Equipment ID, and a Priority Level (which you will determine based on
+            the fault severity).
+
+            2.  **Problem Description**: Briefly summarize the diagnosed fault and
+            its potential business impact (e.g., risk of machine failure, quality
+            degradation).
+
+            3.  **Bill of Materials (BOM)**: List all required parts. For each part,
+            specify the Part ID, Name, and required Quantity.
+
+            4.  **Safety Precautions**: This is a mandatory section. At a minimum,
+            include standard Lockout/Tagout (LOTO) procedures and any specific safety
+            warnings related to the task.
+
+            5.  **Step-by-Step Execution Procedure**: Provide a detailed, numbered
+            list of actions for the maintenance technician. The steps should be logical,
+            starting from machine preparation to task completion and final testing.
+
+            6.  **Time & Resource Estimation**: Provide a reasonable estimate for
+            the total maintenance downtime and the number of technicians required
+            (e.g., 1 or 2).
+
+            7.  **Scheduling Recommendation**: This is the final, critical advice.
+            Based on the provided spare part availability (stock levels and lead times),
+            give a clear recommendation on when to schedule the maintenance (e.g.,
+            "Schedule immediately, part is in stock" or "Schedule in X days, after
+            the part arrives").
+
+
+            Your tone should be professional, authoritative, and helpful. The clarity
+            and accuracy of your work order directly impact production uptime and
+            personnel safety.'
+        - id: 388bd13a-8dae-4c19-a21c-a1784867c923
+          role: user
+          text: 'Please generate a complete Predictive Maintenance Work Order based
+            on the following data.
+
+
+            ---
+
+            ### 1. Fault Diagnosis & Prediction (from FAULT_PREDICTION node)
+
+
+            This is the confirmed analysis of the impending failure.
+
+
+            {{#1753454477691.text#}}
+
+
+            ---
+
+            ### 2. Required Spare Part Availability (from RMMS via PARSE_RMMS_DATA
+            node)
+
+
+            This is the real-time information for the primary spare part identified
+            in the diagnosis.
+
+
+            {{#1753458236299.parsed_rmms_info#}}
+
+
+            ---
+
+            ### Your Task: Generate the Work Order
+
+
+            Now, using your expertise as a Senior Maintenance Planner, create the
+            formal "Predictive Maintenance Work Order" for CNC machine `{{#1753413415951.equipment_id#}}`.
+
+
+            Follow the precise structure defined in your system instructions. Use
+            the following dynamic data for the header:
+
+            - **Work Order ID**: `PdM-{{#1753413415951.equipment_id#}}-{{{{#sys.workflow_run_id#}}
+            | slice(0, 8)}}`
+
+            - **Equipment ID**: `{{#1753413415951.equipment_id#}}`
+
+
+            Your final report should be ready for direct hand-off to the maintenance
+            team. Generate the report now. Please output in Chinese.
+
+            '
+        selected: false
+        title: LLM-GENERATE_MAINTENANCE_SUGGESTIONS
+        type: llm
+        variables: []
+        vision:
+          enabled: false
+      height: 88
+      id: '1753459374823'
+      position:
+        x: 1045.6462194972203
+        y: 1306.794526783005
+      positionAbsolute:
+        x: 1045.6462194972203
+        y: 1306.794526783005
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 242
+    - data:
+        author: AI训驼师
+        desc: ''
+        height: 139
+        selected: false
+        showAuthor: true
+        text: '{"root":{"children":[{"children":[{"detail":0,"format":0,"mode":"normal","style":"","text":"调用一个定制化的MCP服务接口
+          `get_iot_cnc_data_by_id`。此服务负责根据传入的`cnc_data_id`，从IIoT平台的时序数据库中查询该时刻点的CNC传感器数据快照。","type":"text","version":1}],"direction":"ltr","format":"","indent":0,"type":"paragraph","version":1,"textFormat":0,"textStyle":""}],"direction":"ltr","format":"","indent":0,"type":"root","version":1}}'
+        theme: blue
+        title: ''
+        type: ''
+        width: 270
+      height: 139
+      id: '1754314210883'
+      position:
+        x: 382.9429819594386
+        y: 130.79639494116446
+      positionAbsolute:
+        x: 382.9429819594386
+        y: 130.79639494116446
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom-note
+      width: 270
+    - data:
+        author: AI训驼师
+        desc: ''
+        height: 138
+        selected: false
+        showAuthor: true
+        text: '{"root":{"children":[{"children":[{"detail":0,"format":0,"mode":"normal","style":"","text":"此Python代码节点接收上一步返回的JSON数据。它内嵌了","type":"text","version":1},{"detail":0,"format":1,"mode":"normal","style":"","text":"**预定义的业务规则和阈值**","type":"text","version":1},{"detail":0,"format":0,"mode":"normal","style":"","text":"（例如，主轴负载
+          > 85%）。通过分析关键指标，它会输出一个布尔型的标志位 `decide_flag` (值为 `true` 或 `false`)，以及简要的异常原因描述。这个节点是工作流的第一个“决策大脑”，起到了高效的初步筛选作用，避免了对所有正常数据进行不必要的深度分析。","type":"text","version":1}],"direction":"ltr","format":"","indent":0,"type":"paragraph","version":1,"textFormat":0,"textStyle":""}],"direction":"ltr","format":"","indent":0,"type":"root","version":1}}'
+        theme: blue
+        title: ''
+        type: ''
+        width: 267
+      height: 138
+      id: '1754314277379'
+      position:
+        x: 674.838350903045
+        y: 130.79639494116446
+      positionAbsolute:
+        x: 674.838350903045
+        y: 130.79639494116446
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom-note
+      width: 267
+    - data:
+        author: AI训驼师
+        desc: ''
+        height: 111
+        selected: false
+        showAuthor: true
+        text: '{"root":{"children":[{"children":[{"detail":0,"format":0,"mode":"normal","style":"","text":"此节点作为流程的“路由器”，它根据上一步`ANALYZE_IOT_DATA`输出的
+          `decide_flag` 标志位的值，决定工作流的走向。","type":"text","version":1}],"direction":"ltr","format":"","indent":0,"type":"paragraph","version":1,"textFormat":0,"textStyle":""}],"direction":"ltr","format":"","indent":0,"type":"root","version":1}}'
+        theme: blue
+        title: ''
+        type: ''
+        width: 303
+      height: 111
+      id: '1754314372446'
+      position:
+        x: 945.4110498395319
+        y: 318.184140794655
+      positionAbsolute:
+        x: 945.4110498395319
+        y: 318.184140794655
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom-note
+      width: 303
+    - data:
+        author: AI训驼师
+        desc: ''
+        height: 115
+        selected: false
+        showAuthor: true
+        text: '{"root":{"children":[{"children":[{"detail":0,"format":0,"mode":"normal","style":"","text":"调用RMMS系统的API接口，获取该设备的历史维护记录","type":"text","version":1}],"direction":"ltr","format":"","indent":0,"type":"paragraph","version":1,"textFormat":0,"textStyle":""}],"direction":"ltr","format":"","indent":0,"type":"root","version":1}}'
+        theme: blue
+        title: ''
+        type: ''
+        width: 274
+      height: 115
+      id: '1754314430884'
+      position:
+        x: -37.49457350312821
+        y: 538.3866737778735
+      positionAbsolute:
+        x: -37.49457350312821
+        y: 538.3866737778735
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom-note
+      width: 274
+    - data:
+        author: AI训驼师
+        desc: ''
+        height: 88
+        selected: false
+        showAuthor: true
+        text: '{"root":{"children":[{"children":[{"detail":0,"format":0,"mode":"normal","style":"","text":"调用RMMS系统的API接口，获取与当前异常症状相关的历史故障案例。","type":"text","version":1}],"direction":"ltr","format":"","indent":0,"type":"paragraph","version":1,"textFormat":0,"textStyle":""}],"direction":"ltr","format":"","indent":0,"type":"root","version":1}}'
+        theme: blue
+        title: ''
+        type: ''
+        width: 240
+      height: 88
+      id: '1754314826918'
+      position:
+        x: 338.51772974235485
+        y: 561.1053501129869
+      positionAbsolute:
+        x: 338.51772974235485
+        y: 561.1053501129869
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom-note
+      width: 240
+    - data:
+        author: AI训驼师
+        desc: ''
+        height: 107
+        selected: false
+        showAuthor: true
+        text: '{"root":{"children":[{"children":[{"detail":0,"format":0,"mode":"normal","style":"","text":"调用MES系统的API接口，传入当前设备的ID，获取该设备在异常发生时正在执行的工单号、产品型号、工艺程序等生产上下文信息。","type":"text","version":1}],"direction":"ltr","format":"","indent":0,"type":"paragraph","version":1,"textFormat":0,"textStyle":""}],"direction":"ltr","format":"","indent":0,"type":"root","version":1}}'
+        theme: blue
+        title: ''
+        type: ''
+        width: 284
+      height: 107
+      id: '1754315032511'
+      position:
+        x: 682.9601174845695
+        y: 561.1053501129869
+      positionAbsolute:
+        x: 682.9601174845695
+        y: 561.1053501129869
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom-note
+      width: 284
+    - data:
+        author: AI训驼师
+        desc: ''
+        height: 124
+        selected: false
+        showAuthor: true
+        text: '{"root":{"children":[{"children":[{"detail":0,"format":0,"mode":"normal","style":"","text":"将`ANALYZE_IOT_DATA`节点识别出的异常现象（如“主轴过载”）作为查询语句，对RAGKB知识库进行语义检索，精准地从数控机床《维护手册》和《维修案例》中找出相关的技术说明和解决方案片段。","type":"text","version":1}],"direction":"ltr","format":"","indent":0,"type":"paragraph","version":1,"textFormat":0,"textStyle":""}],"direction":"ltr","format":"","indent":0,"type":"root","version":1}}'
+        theme: blue
+        title: ''
+        type: ''
+        width: 282
+      height: 124
+      id: '1754315086522'
+      position:
+        x: 1029.2928278676939
+        y: 706.2911051775778
+      positionAbsolute:
+        x: 1029.2928278676939
+        y: 706.2911051775778
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom-note
+      width: 282
+    - data:
+        author: AI训驼师
+        desc: ''
+        height: 121
+        selected: false
+        showAuthor: true
+        text: '{"root":{"children":[{"children":[{"detail":0,"format":0,"mode":"normal","style":"","text":"这是一个核心的AI推理节点。它接收并整合前面所有节点的数据：实时异常快照、生产上下文、历史运维记录、专家知识片段。在一个精心设计的Prompt模板引导下，LLM将扮演“资深设备工程师”的角色，进行多源信息关联分析，推理出最可能的故障模式，并以","type":"text","version":1},{"detail":0,"format":1,"mode":"normal","style":"","text":"**结构化的格式**","type":"text","version":1},{"detail":0,"format":0,"mode":"normal","style":"","text":"预测出需要更换的核心备件ID。","type":"text","version":1}],"direction":"ltr","format":"","indent":0,"type":"paragraph","version":1,"textFormat":0,"textStyle":""}],"direction":"ltr","format":"","indent":0,"type":"root","version":1}}'
+        theme: blue
+        title: ''
+        type: ''
+        width: 291
+      height: 121
+      id: '1754315143012'
+      position:
+        x: -43.83467619744556
+        y: 920.5244233123049
+      positionAbsolute:
+        x: -43.83467619744556
+        y: 920.5244233123049
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom-note
+      width: 291
+    - data:
+        author: AI训驼师
+        desc: ''
+        height: 98
+        selected: false
+        showAuthor: true
+        text: '{"root":{"children":[{"children":[{"detail":0,"format":0,"mode":"normal","style":"","text":"从`FAULT_PREDICTION`节点返回的文本中，使用正则表达式精确、可靠地提取出预测的备件ID（`required_partId`），为下一步查询库存做准备。","type":"text","version":1}],"direction":"ltr","format":"","indent":0,"type":"paragraph","version":1,"textFormat":0,"textStyle":""}],"direction":"ltr","format":"","indent":0,"type":"root","version":1}}'
+        theme: blue
+        title: ''
+        type: ''
+        width: 304
+      height: 98
+      id: '1754315181496'
+      position:
+        x: 312.22632243394384
+        y: 963.6678296051477
+      positionAbsolute:
+        x: 312.22632243394384
+        y: 963.6678296051477
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom-note
+      width: 304
+    - data:
+        author: AI训驼师
+        desc: ''
+        height: 98
+        selected: false
+        showAuthor: true
+        text: '{"root":{"children":[{"children":[{"detail":0,"format":0,"mode":"normal","style":"","text":"调用RMMS系统的备件查询API，使用上一步提取的`required_partId`作为参数，获取该备件的详细信息，包括实时库存、供应商和采购提前期。","type":"text","version":1}],"direction":"ltr","format":"","indent":0,"type":"paragraph","version":1,"textFormat":0,"textStyle":""}],"direction":"ltr","format":"","indent":0,"type":"root","version":1}}'
+        theme: blue
+        title: ''
+        type: ''
+        width: 292
+      height: 98
+      id: '1754315217432'
+      position:
+        x: 674.838350903045
+        y: 951.3573140098039
+      positionAbsolute:
+        x: 674.838350903045
+        y: 951.3573140098039
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom-note
+      width: 292
+    - data:
+        author: AI训驼师
+        desc: ''
+        height: 107
+        selected: false
+        showAuthor: true
+        text: '{"root":{"children":[{"children":[{"detail":0,"format":0,"mode":"normal","style":"","text":"将上一步返回的备件JSON数据，解析并格式化成一段对人类和LLM都友好的、清晰易读的文本描述，突出库存状态和到货时间。","type":"text","version":1}],"direction":"ltr","format":"","indent":0,"type":"paragraph","version":1,"textFormat":0,"textStyle":""}],"direction":"ltr","format":"","indent":0,"type":"root","version":1}}'
+        theme: blue
+        title: ''
+        type: ''
+        width: 281
+      height: 107
+      id: '1754315261478'
+      position:
+        x: 1035.4940112703148
+        y: 963.6678296051477
+      positionAbsolute:
+        x: 1035.4940112703148
+        y: 963.6678296051477
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom-note
+      width: 281
+    - data:
+        author: AI训驼师
+        desc: ''
+        height: 135
+        selected: false
+        showAuthor: true
+        text: '{"root":{"children":[{"children":[{"detail":0,"format":0,"mode":"normal","style":"","text":"这是工作流的最终价值输出节点。它整合了`FAULT_PREDICTION`的诊断结论和`PARSE_RMMS_DATA`的备件可用性信息，在一个“维护计划专家”角色的Prompt引导下，生成一份完整的、专业化的预测性维护工单，内容包括：问题描述、安全须知、详细的维护步骤、物料清单(BOM)以及基于备件情况的智能调度建议。","type":"text","version":1}],"direction":"ltr","format":"","indent":0,"type":"paragraph","version":1,"textFormat":0,"textStyle":""}],"direction":"ltr","format":"","indent":0,"type":"root","version":1}}'
+        theme: blue
+        title: ''
+        type: ''
+        width: 282
+      height: 135
+      id: '1754315297746'
+      position:
+        x: 1045.6462194972203
+        y: 1166.3444147188961
+      positionAbsolute:
+        x: 1045.6462194972203
+        y: 1166.3444147188961
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom-note
+      width: 282
+    - data:
+        author: AI训驼师
+        desc: ''
+        height: 106
+        selected: false
+        showAuthor: true
+        text: '{"root":{"children":[{"children":[{"detail":0,"format":0,"mode":"normal","style":"","text":"展示`GENERATE_MAINTENANCE_SUGGESTIONS`节点生成的完整维护工单，作为本次预测性维护流程的最终成果。","type":"text","version":1}],"direction":"ltr","format":"","indent":0,"type":"paragraph","version":1,"textFormat":0,"textStyle":""}],"direction":"ltr","format":"","indent":0,"type":"root","version":1}}'
+        theme: blue
+        title: ''
+        type: ''
+        width: 320
+      height: 106
+      id: '1754315347209'
+      position:
+        x: 682.9601174845695
+        y: 1348.9149970185845
+      positionAbsolute:
+        x: 682.9601174845695
+        y: 1348.9149970185845
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom-note
+      width: 320
+    - data:
+        author: AI训驼师
+        desc: ''
+        height: 99
+        selected: false
+        showAuthor: true
+        text: '{"root":{"children":[{"children":[{"detail":0,"format":0,"mode":"normal","style":"","text":"流向一个配置了简单输出的End节点，返回信息如“设备ID:
+          CNC-001 状态正常，无需维护”，并结束工作流。","type":"text","version":1}],"direction":"ltr","format":"","indent":0,"type":"paragraph","version":1,"textFormat":0,"textStyle":""}],"direction":"ltr","format":"","indent":0,"type":"root","version":1}}'
+        theme: blue
+        title: ''
+        type: ''
+        width: 252
+      height: 99
+      id: '1754315372831'
+      position:
+        x: 1029.2928278676939
+        y: 452.89483424280945
+      positionAbsolute:
+        x: 1029.2928278676939
+        y: 452.89483424280945
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom-note
+      width: 252
+    viewport:
+      x: 457.9296512757835
+      y: -23.992823310989365
+      zoom: 0.7891662158172861

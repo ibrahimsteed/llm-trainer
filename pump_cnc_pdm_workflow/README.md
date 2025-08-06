@@ -9,6 +9,7 @@
 - Code-PARSE-RMMS-DATA.py
 ## 业务系统的数据接口封装源码（工业物联网管理平台IoT Platform/MES/远程运维系统RMMS的HTTP接口源码)
 - integration
+- 接口实现主要由这个文件完成：integration/frappe/frappe/integrations/api_dify.py
 ## 数据库DDL文件
 - tabCNCData.sql
 - tabMESProductionData.sql
